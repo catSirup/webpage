@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="100%" stop-color="#080808"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background rounded square -->
+  <rect x="4" y="4" width="192" height="192" rx="32" ry="32" fill="url(#glow)" stroke="#222" stroke-width="1.5"/>
+
+  <!-- Cat ears (boxy rectangles, behind head) -->
+  <rect x="38" y="22" width="34" height="34" rx="4" ry="4" fill="#ff4d6a" transform="rotate(-8 55 39)"/>
+  <rect x="128" y="22" width="34" height="34" rx="4" ry="4" fill="#4dc4ff" transform="rotate(8 145 39)"/>
+
+  <!-- Head (rounded rectangle, filled) -->
+  <rect x="46" y="52" width="108" height="100" rx="20" ry="20" fill="#222"/>
+
+  <!-- Eyes (round, filled) -->
+  <circle cx="76" cy="90" r="14" fill="#ffd94d"/>
+  <circle cx="124" cy="90" r="14" fill="#4dff91"/>
+
+  <!-- Pupils (dark circles) -->
+  <circle cx="76" cy="90" r="6" fill="#080808"/>
+  <circle cx="124" cy="90" r="6" fill="#080808"/>
+
+  <!-- Eye highlights -->
+  <circle cx="80" cy="86" r="3" fill="rgba(255,255,255,0.5)"/>
+  <circle cx="128" cy="86" r="3" fill="rgba(255,255,255,0.5)"/>
+
+  <!-- Nose (small diamond) -->
+  <polygon points="100,112 96,118 100,122 104,118" fill="#b070e8"/>
+
+  <!-- Mouth -->
+  <path d="M96,122 Q93,128 88,127" fill="none" stroke="#b070e8" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <path d="M104,122 Q107,128 112,127" fill="none" stroke="#b070e8" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Whiskers -->
+  <line x1="30" y1="104" x2="62" y2="108" stroke="#ff4d6a" stroke-width="1.5" opacity="0.35"/>
+  <line x1="28" y1="114" x2="60" y2="114" stroke="#ffd94d" stroke-width="1.5" opacity="0.35"/>
+  <line x1="30" y1="124" x2="62" y2="120" stroke="#4dff91" stroke-width="1.5" opacity="0.35"/>
+  <line x1="170" y1="104" x2="138" y2="108" stroke="#4dc4ff" stroke-width="1.5" opacity="0.35"/>
+  <line x1="172" y1="114" x2="140" y2="114" stroke="#ffd94d" stroke-width="1.5" opacity="0.35"/>
+  <line x1="170" y1="124" x2="138" y2="120" stroke="#b070e8" stroke-width="1.5" opacity="0.35"/>
+</svg>
