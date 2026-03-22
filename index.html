@@ -25,6 +25,10 @@
 
   html { scroll-behavior: smooth; }
 
+  /* i18n */
+  html[lang="ko"] .en { display: none; }
+  html[lang="en"] .ko { display: none; }
+
   body {
     background: var(--bg);
     color: var(--text);
@@ -69,10 +73,23 @@
     align-items: center;
   }
   .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .lang-btn {
     font-family: var(--mono);
     font-size: 11px;
     color: var(--muted);
+    background: none;
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+    letter-spacing: 0.05em;
   }
+  .lang-btn:hover { border-color: var(--accent); color: var(--accent); }
 
   /* HERO */
   .hero {
@@ -229,6 +246,11 @@
     gap: 6px;
     position: relative; z-index: 1;
   }
+  .badge-sep {
+    width: 100%;
+    height: 0;
+    margin: 2px 0;
+  }
   .badge {
     font-family: var(--mono);
     font-size: 9px;
@@ -297,11 +319,19 @@
 
 <nav>
   <a class="nav-logo" href="#">STUDIO MA-AH</a>
+  <div class="nav-right">
+    <button class="lang-btn" onclick="toggleLang()">
+      <span class="ko">EN</span><span class="en">KO</span>
+    </button>
+  </div>
 </nav>
 
 <section class="hero">
   <h1 class="hero-title">SIMPLE<br>BUT<br><span>FUN.</span></h1>
-  <p class="hero-sub">Simple rules, endless fun.<br>That's how we play.</p>
+  <p class="hero-sub">
+    <span class="ko">단순한 규칙, 끝없는 재미.<br>그게 우리가 노는 방식이야.</span>
+    <span class="en">Simple rules, endless fun.<br>That's how we play.</span>
+  </p>
 </section>
 
 <section class="section">
@@ -320,10 +350,12 @@
       <div class="card-genre">Hyper-casual · Arcade</div>
       <div class="card-name">Color Jump</div>
       <div class="card-desc">
-        Match the color and jump. Simple mechanics,<br>addictive rhythm.
+        <span class="ko">색을 맞추고 점프하세요. 단순한 조작,<br>중독적인 리듬.</span>
+        <span class="en">Match the color and jump. Simple mechanics,<br>addictive rhythm.</span>
       </div>
       <div class="card-footer">
         <span class="badge live">● Live</span>
+        <div class="badge-sep"></div>
         <a class="badge android store-link"
            href="https://play.google.com/store/apps/details?id=com.steptostep.color_jump_game"
            target="_blank" rel="noopener">↗ Google Play</a>
@@ -335,7 +367,9 @@
            target="_blank" rel="noopener">↗ ONE store</a>
         <a class="badge toss store-link"
            href="https://minion.toss.im/X98bfKY"
-           target="_blank" rel="noopener">↗ 앱인토스</a>
+           target="_blank" rel="noopener">
+           <span class="ko">↗ 앱인토스</span><span class="en">↗ Toss</span></a>
+        <div class="badge-sep"></div>
         <a class="badge support store-link"
            href="support/color-jump.html">↗ Support</a>
         <a class="badge privacy store-link"
@@ -351,10 +385,12 @@
       <div class="card-genre">Survival · Action</div>
       <div class="card-name">Sublux</div>
       <div class="card-desc">
-        Survive using only light in the darkness.<br>Deep-sea survival action with wave challenges.
+        <span class="ko">어둠 속에서 빛만으로 생존하세요.<br>파도를 헤쳐나가는 심해 서바이벌 액션.</span>
+        <span class="en">Survive using only light in the darkness.<br>Deep-sea survival action with wave challenges.</span>
       </div>
       <div class="card-footer">
         <span class="badge live">● Live</span>
+        <div class="badge-sep"></div>
         <a class="badge android store-link"
            href="https://play.google.com/store/apps/details?id=com.ma_ah.sublux"
            target="_blank" rel="noopener">↗ Google Play</a>
@@ -364,6 +400,7 @@
         <a class="badge onestore store-link"
            href="https://m.onestore.co.kr/v2/ko-kr/app/0001004627"
            target="_blank" rel="noopener">↗ ONE store</a>
+        <div class="badge-sep"></div>
         <a class="badge support store-link"
            href="support/sublux.html">↗ Support</a>
         <a class="badge privacy store-link"
@@ -379,10 +416,14 @@
       <div class="card-genre">Arcade · Shooter</div>
       <div class="card-name">Squadaga</div>
       <div class="card-desc">
-        Recruit enemies into your squad and survive.<br>Fast-paced arcade shooter with squad-building.
+        <span class="ko">적을 아군으로 만들어 생존하세요.<br>스쿼드를 구축하는 아케이드 슈팅.</span>
+        <span class="en">Recruit enemies into your squad and survive.<br>Fast-paced arcade shooter with squad-building.</span>
       </div>
       <div class="card-footer">
-        <span class="badge dev">● In Dev</span>
+        <span class="badge dev">
+          <span class="ko">● 개발 중</span><span class="en">● In Dev</span>
+        </span>
+        <div class="badge-sep"></div>
         <a class="badge support store-link"
            href="support/squadaga.html">↗ Support</a>
         <a class="badge privacy store-link"
@@ -412,9 +453,26 @@
 
 <footer>
   <span class="footer-text">© 2026 Studio MA-AH</span>
-  <span class="footer-text">대표자명: 김태형 | 사업자등록번호: 668-01-03760 | <a href="mailto:taehyung0116@gmail.com" style="color:var(--muted);text-decoration:none;">taehyung0116@gmail.com</a></span>
+  <span class="footer-text">
+    <span class="ko">대표자명: 김태형 | 사업자등록번호: 668-01-03760 | </span>
+    <span class="en">CEO: Taehyung Kim | BRN: 668-01-03760 | </span>
+    <a href="mailto:taehyung0116@gmail.com" style="color:var(--muted);text-decoration:none;">taehyung0116@gmail.com</a>
+  </span>
 </footer>
 
+<script>
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  localStorage.setItem('lang', lang);
+}
+function toggleLang() {
+  setLang(document.documentElement.lang === 'ko' ? 'en' : 'ko');
+}
+(function() {
+  var saved = localStorage.getItem('lang');
+  if (saved) setLang(saved);
+})();
+</script>
 
 </body>
 </html>
