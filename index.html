@@ -298,6 +298,17 @@
     font-size: 11px;
     color: var(--muted);
   }
+  .footer-info {
+    display: grid;
+  }
+  .footer-info .ko,
+  .footer-info .en {
+    grid-area: 1 / 1;
+  }
+  html[lang="ko"] .footer-info .en,
+  html[lang="en"] .footer-info .ko {
+    visibility: hidden;
+  }
 
   /* ANIMATION */
   @keyframes fadeUp {
@@ -461,10 +472,9 @@
 
 <footer>
   <span class="footer-text">© 2026 Studio MA-AH</span>
-  <span class="footer-text">
-    <span class="ko">대표자명: 김태형 | 사업자등록번호: 668-01-03760 | </span>
-    <span class="en">CEO: Taehyung Kim | BRN: 668-01-03760 | </span>
-    <a href="mailto:taehyung0116@gmail.com" style="color:var(--muted);text-decoration:none;">taehyung0116@gmail.com</a>
+  <span class="footer-text footer-info">
+    <span class="ko">대표자명: 김태형 | 사업자등록번호: 668-01-03760 | <a href="mailto:taehyung0116@gmail.com" style="color:var(--muted);text-decoration:none;">taehyung0116@gmail.com</a></span>
+    <span class="en">CEO: Taehyung Kim | BRN: 668-01-03760 | <a href="mailto:taehyung0116@gmail.com" style="color:var(--muted);text-decoration:none;">taehyung0116@gmail.com</a></span>
   </span>
 </footer>
 
